@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Blog Post</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .blog-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .featured-image {
+            width: 59%;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .content p {
+            margin-bottom: 15px;
+        }
+        
+        .social-share {
+            margin: 30px 0;
+        }
+        
+        .social-share a {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 10px;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        
+        .social-share a:hover {
+            opacity: 0.8;
+        }
+        
+        .facebook {
+            background: #3b5998;
+        }
+        
+        .twitter {
+            background: #1da1f2;
+        }
+        
+        .linkedin {
+            background: #0077b5;
+        }
+        
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 50%;
+            font-size: 18px;
+            display: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        
+        .blog-layout {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        @media(min-width: 768px) {
+            .blog-layout {
+                flex-direction: row;
+                gap: 20px;
+            }
+        }
+        
+        .main-content {
+            flex: 3;
+        }
+        
+        .sidebar {
+            flex: 1;
+            background: #f9f9f9;
+            padding: 15px;
+            margin-top: 30px;
+        }
+        
+        .sidebar h3 {
+            margin-bottom: 15px;
+        }
+        
+        .sidebar input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .sidebar ul {
+            list-style: none;
+        }
+        
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+        
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #0077b5;
+        }
+        
+        .comments {
+            margin-top: 40px;
+        }
+        
+        .comments h3 {
+            margin-bottom: 10px;
+        }
+        
+        .comments form input,
+        .comments form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .comments form button {
+            padding: 10px 15px;
+            background: #0077b5;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .comments form button:hover {
+            background: #005f91;
+        }
+        
+        .error {
+            color: red;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="blog-layout">
+            <div class="main-content">
+                <header class="blog-header">
+                    <h1>Designing a Responsive Blog Page</h1>
+                    <p class="meta">July 19, 2025 · By Arslan Sheikh</p>
+                </header>
+
+                <img src="C:\Users\HP\OneDrive\Desktop\blog.jpg" class="featured-image" alt="Featured">
+
+
+
+
+                <div class="content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac lacus vel lorem vehicula aliquet.</p>
+                    <p>Fusce iaculis, tortor eget ultrices vulputate, est leo vehicula purus, nec viverra arcu ante in dolor.</p>
+                    <p>Quisque efficitur orci vitae orci tincidunt, vel vehicula elit tempor. Cras luctus congue nulla.</p>
+                    <p>Vestibulum eget quam nec risus sagittis suscipit. Nulla facilisi. Etiam auctor lacus sed sapien.</p>
+                </div>
+
+                <div class="social-share">
+                    <a href="#" class="facebook">Facebook</a>
+                    <a href="#" class="twitter">Twitter</a>
+                    <a href="#" class="linkedin">LinkedIn</a>
+                </div>
+
+                <div class="comments">
+                    <h3>Leave a Comment</h3>
+                    <form id="commentForm">
+                        <input type="text" id="name" placeholder="Your Name">
+                        <div id="nameError" class="error"></div>
+                        <textarea id="comment" placeholder="Your Comment" rows="4"></textarea>
+                        <div id="commentError" class="error"></div>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+            <aside class="sidebar">
+                <h3>Search</h3>
+                <input type="text" placeholder="Search...">
+
+                <h3>Recent Posts</h3>
+                <ul>
+                    <li><a href="#">How to Build a Portfolio</a></li>
+                    <li><a href="#">Top Web Design Trends</a></li>
+                    <li><a href="#">CSS Tips for Beginners</a></li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+
+    <button class="scroll-to-top" id="scrollTopBtn">&#8679;</button>
+
+    <script>
+        // Scroll-to-top button
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+        window.addEventListener('scroll', () => {
+            scrollTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Simple validation for comment form
+        const form = document.getElementById('commentForm');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            let name = document.getElementById('name').value.trim();
+            let comment = document.getElementById('comment').value.trim();
+            let nameError = document.getElementById('nameError');
+            let commentError = document.getElementById('commentError');
+
+            nameError.textContent = '';
+            commentError.textContent = '';
+
+            if (name === '') {
+                nameError.textContent = 'Name is required.';
+                return;
+            }
+            if (comment === '') {
+                commentError.textContent = 'Comment is required.';
+                return;
+            }
+
+            alert('Thank you for your comment!');
+            form.reset();
+        });
+    </script>
+
+</body>
+
+</html>
