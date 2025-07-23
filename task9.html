@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meet Our Team</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        header {
+            text-align: center;
+            padding: 50px 20px 20px;
+        }
+        
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        .team-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .team-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .team-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        
+        .team-card h3 {
+            margin: 10px 0 5px;
+            font-size: 1.3rem;
+        }
+        
+        .team-card p.role {
+            color: #888;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+        
+        .team-card .bio {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .social-icons a {
+            margin: 0 8px;
+            color: #333;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: #0077b5;
+        }
+        
+        .team-card button {
+            margin-top: 10px;
+            background-color: #0077b5;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+        
+        .team-card button:hover {
+            background-color: #005f91;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            text-align: left;
+            position: relative;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Meet Our Team</h1>
+        <p>The minds behind our innovation</p>
+    </header>
+
+    <div class="team-container">
+
+        <div class="team-card">
+            <img src="" alt="Profile">
+            <h3>Arslan sheikh</h3>
+            <p class="role">Web Developer</p>
+            <p class="bio">Passionate about building responsive UIs and seamless user experiences.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <button onclick="openModal('aria')">View Profile</button>
+        </div>
+
+
+        <div class="team-card">
+            <img src="" alt="Profile">
+            <h3>Anees</h3>
+            <p class="role">front-End Developer</p>
+            <p class="bio">Designs intuitive interfaces that make user journeys delightful.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <button onclick="openModal('liam')">View Profile</button>
+        </div>
+
+
+        <div class="team-card">
+            <img src="" alt="Profile">
+            <h3>Hassan</h3>
+            <p class="role">Back-End Developer</p>
+            <p class="bio">Ensures robust server-side logic and database architecture.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <button onclick="openModal('noah')">View Profile</button>
+        </div>
+
+
+        <div class="team-card">
+            <img src="" alt="Profile">
+            <h3>Sofia</h3>
+            <p class="role">Project Manager</p>
+            <p class="bio">Coordinates teams and ensures timely delivery of all milestones.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <button onclick="openModal('sofia')">View Profile</button>
+        </div>
+    </div>
+
+
+    <div class="modal" id="profileModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modalContent">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const profiles = {
+            aria: {
+                name: "Arslan Sheikh",
+                role: "Web Developer",
+                bio: "Creates responsive and modern websites with clean, efficient code."
+            },
+            liam: {
+                name: "Aness",
+                role: "Front-end Developer",
+                bio: " Passionate about crafting responsive and user-friendly web interfaces. "
+            },
+            noah: {
+                name: "Hassan",
+                role: "Back-End Developer",
+                bio: " works on APIs, databases, and security. Skilled in Node.js, Express, MongoDB, and cloud architecture."
+            },
+            sofia: {
+                name: "Sofia",
+                role: "Project Manager",
+                bio: "Sofia drives team collaboration, project planning, and delivery. She ensures client requirements are translated effectively."
+            }
+        };
+
+        function openModal(id) {
+            const person = profiles[id];
+            const modal = document.getElementById("profileModal");
+            const content = `
+      <h2>${person.name}</h2>
+      <p><strong>${person.role}</strong></p>
+      <p>${person.bio}</p>
+    `;
+            document.getElementById("modalContent").innerHTML = content;
+            modal.style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("profileModal").style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById("profileModal");
+            if (event.target === modal) closeModal();
+        }
+    </script>
+
+</body>
+
+</html>
