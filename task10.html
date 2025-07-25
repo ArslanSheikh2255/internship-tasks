@@ -2,208 +2,262 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Services - CoreTech Innovations</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        header {
-            background-color: #2e3a59;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        header h1 {
-            font-size: 2.5rem;
-        }
-        
-        header p {
-            font-size: 1.1rem;
-            margin-top: 8px;
-        }
-        
-        nav {
-            background: #1f2a43;
-            padding: 10px;
-            text-align: center;
-        }
-        
-        nav a {
-            color: #fff;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        
-        nav a:hover {
-            color: #ff9800;
-        }
-        
-        .tabs {
-            display: flex;
-            justify-content: center;
-            margin: 30px 0 10px;
-            flex-wrap: wrap;
-        }
-        
-        .tab {
-            background: #fff;
-            border: 2px solid #ddd;
-            padding: 12px 24px;
-            margin: 5px;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-        
-        .tab:hover,
-        .tab.active {
-            background-color: #ff9800;
-            color: white;
-            border-color: #ff9800;
-        }
-        
-        .tab-content {
-            max-width: 900px;
-            margin: 20px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            display: none;
-            animation: fadeIn 0.4s ease-in-out;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        .tab-content h2 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-        
-        .tab-content p {
-            font-size: 1rem;
-            margin-bottom: 20px;
-        }
-        
-        .tab-content i {
-            font-size: 40px;
-            margin-bottom: 15px;
-            color: #ff9800;
-        }
-        
-        .btn {
-            background-color: #ff9800;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background 0.3s ease;
-        }
-        
-        .btn:hover {
-            background-color: #e68900;
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        /* Responsive Design */
-        
-        @media (max-width: 600px) {
-            .tabs {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services - CoreTech Innovations</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #2e3a59;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-top: 8px;
+    }
+
+    nav {
+      background: #1f2a43;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff9800;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0 10px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tab {
+      background: #fff;
+      border: 2px solid #ddd;
+      padding: 12px 24px;
+      cursor: pointer;
+      border-radius: 8px;
+      font-size: 1rem;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .tab:hover {
+      border-color: #ff9800;
+      background-color: #ffe1b3;
+      color: #333;
+    }
+
+    .tab.active {
+      background-color: #ff9800;
+      color: white;
+      border-color: #ff9800;
+    }
+
+    .tab-select {
+      display: none;
+      margin: 20px auto;
+      width: 90%;
+      padding: 10px;
+      font-size: 1rem;
+    }
+
+    .tab-content {
+      max-width: 900px;
+      margin: 20px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      display: none;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .tab-content i {
+      font-size: 40px;
+      margin-bottom: 15px;
+      color: #ff9800;
+      display: block;
+    }
+
+    .tab-content h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .tab-content p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background-color: #ff9800;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      background-color: #e68900;
+      outline: none;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+   
+    @media (max-width: 768px) {
+      .tab {
+        padding: 10px 16px;
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .tabs {
+        display: none;
+      }
+
+      .tab-select {
+        display: block;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Our Services</h1>
-        <p>What we offer at CoreTech Innovations</p>
-    </header>
+  <header>
+    <h1>Our Services</h1>
+    <p>What we offer at CoreTech Innovations</p>
+  </header>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
-    </nav>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </nav>
 
-    <div class="tabs">
-        <div class="tab active" data-tab="web">Web Development</div>
-        <div class="tab" data-tab="mobile">Mobile App Development</div>
-        <div class="tab" data-tab="marketing">Digital Marketing</div>
-    </div>
+  <select class="tab-select" id="tabSelect">
+    <option value="web">Web Development</option>
+    <option value="mobile">Mobile App Development</option>
+    <option value="marketing">Digital Marketing</option>
+  </select>
 
-    <div class="tab-content active" id="web">
-        <i class="fas fa-code"></i>
-        <h2>Web Development</h2>
-        <p>We build fast, responsive websites tailored to your business needs using modern technologies and best practices.</p>
-        <button class="btn">Learn More</button>
-    </div>
+  <div class="tabs">
+    <div class="tab active" data-tab="web">Web Development</div>
+    <div class="tab" data-tab="mobile">Mobile App Development</div>
+    <div class="tab" data-tab="marketing">Digital Marketing</div>
+  </div>
 
-    <div class="tab-content" id="mobile">
-        <i class="fas fa-mobile-alt"></i>
-        <h2>Mobile App Development</h2>
-        <p>Our team creates high-performance mobile applications for both Android and iOS, focused on user experience and scalability.</p>
-        <button class="btn">Learn More</button>
-    </div>
+  <div class="tab-content active" id="web">
+    <i class="fas fa-code"></i>
+    <h3>Web Development</h3>
+    <p>We build fast, responsive websites tailored to your business needs using modern technologies and best practices.</p>
+    <button class="btn">Learn More</button>
+  </div>
 
-    <div class="tab-content" id="marketing">
-        <i class="fas fa-bullhorn"></i>
-        <h2>Digital Marketing</h2>
-        <p>Reach your audience effectively with our SEO, social media, and online advertising strategies that drive results.</p>
-        <button class="btn">Learn More</button>
-    </div>
+  <div class="tab-content" id="mobile">
+    <i class="fas fa-mobile-alt"></i>
+    <h3>Mobile App Development</h3>
+    <p>Our team creates high-performance mobile applications for both Android and iOS, focused on user experience and scalability.</p>
+    <button class="btn">Learn More</button>
+  </div>
 
-    <script>
-        const tabs = document.querySelectorAll('.tab');
-        const contents = document.querySelectorAll('.tab-content');
+  <div class="tab-content" id="marketing">
+    <i class="fas fa-bullhorn"></i>
+    <h3>Digital Marketing</h3>
+    <p>Reach your audience effectively with our SEO, social media, and online advertising strategies that drive results.</p>
+    <button class="btn">Learn More</button>
+  </div>
 
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.tab-content');
+    const select = document.getElementById('tabSelect');
 
-                tabs.forEach(t => t.classList.remove('active'));
-                contents.forEach(c => c.classList.remove('active'));
+    function switchTab(tabId) {
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
 
+      const targetTab = document.querySelector(`.tab[data-tab="${tabId}"]`);
+      const targetContent = document.getElementById(tabId);
 
-                tab.classList.add('active');
-                document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
-            });
-        });
-    </script>
+      if (targetTab && targetContent) {
+        targetTab.classList.add('active');
+        targetContent.classList.add('active');
+      }
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetId = tab.getAttribute('data-tab');
+        switchTab(targetId);
+        select.value = targetId;
+      });
+    });
+
+    select.addEventListener('change', () => {
+      const selected = select.value;
+      switchTab(selected);
+    });
+  </script>
 
 </body>
 
