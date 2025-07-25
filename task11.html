@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meet Our Team</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f6fa;
+            color: #333;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px 20px;
+            background-color: #2e3a59;
+            color: white;
+        }
+        
+        header h1 {
+            font-size: 2.8rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            padding: 40px 5%;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+        
+        .card p.role {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        
+        .card p.bio {
+            font-size: 0.95rem;
+            color: #666;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .card:hover .social-icons {
+            opacity: 1;
+        }
+        
+        .social-icons a {
+            color: #555;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: #0077b5;
+        }
+        
+        .social-icons a.github:hover {
+            color: #333;
+        }
+        
+        .social-icons a.twitter:hover {
+            color: #1da1f2;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            .card img {
+                height: 200px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .card img {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Meet Our Team</h1>
+        <p>The people behind our remote innovation</p>
+    </header>
+
+    <section class="team-container">
+
+        <div class="card">
+            <img src="">
+            <hr2>team Member</h2>
+                <div class=" card-content ">
+                    <h3>Arslan Sheikh</h3>
+                    <p class="role ">Web Developer</p>
+                    <p class="bio ">Expert in building responsive websites with modern UX/UI.</p>
+                    <div class="social-icons ">
+                        <a href="# " class="linkedin "><i class="fab fa-linkedin "></i></a>
+                        <a href="# " class="github "><i class="fab fa-github "></i></a>
+                        <a href="# " class="twitter "><i class="fab fa-twitter "></i></a>
+                    </div>
+                </div>
+        </div>
+
+        <div class="card ">
+            <img src=" ">
+            <hr2>team Member</h2>
+                <div class="card-content ">
+                    <h3>Hassan Ali</h3>
+                    <p class="role ">Graphic Designer</p>
+                    <p class="bio ">Creates modern, user-centered visuals and branding.</p>
+                    <div class="social-icons ">
+                        <a href="# " class="linkedin "><i class="fab fa-linkedin "></i></a>
+                        <a href="# " class="github "><i class="fab fa-github "></i></a>
+                        <a href="# " class="twitter "><i class="fab fa-twitter "></i></a>
+                    </div>
+                </div>
+        </div>
+
+        <div class="card ">
+            <img src=" ">
+            <hr2>team Member</h2>
+                <div class="card-content ">
+                    <h3>Aness Khan</h3>
+                    <p class="role ">Front-End Developer</p>
+                    <p class="bio ">Passionate about building interactive and fast UIs.</p>
+                    <div class="social-icons ">
+                        <a href="# " class="linkedin "><i class="fab fa-linkedin "></i></a>
+                        <a href="# " class="github "><i class="fab fa-github "></i></a>
+                        <a href="# " class="twitter "><i class="fab fa-twitter "></i></a>
+                    </div>
+                </div>
+        </div>
+
+        <div class="card ">
+            <img src=" ">
+            <hr2>team Member</h2>
+                <div class="card-content ">
+                    <h3>Sana Tariq</h3>
+                    <p class="role ">Project Manager</p>
+                    <p class="bio ">Coordinates the team and ensures timely delivery.</p>
+                    <div class="social-icons ">
+                        <a href="# " class="linkedin "><i class="fab fa-linkedin "></i></a>
+                        <a href="# " class="github "><i class="fab fa-github "></i></a>
+                        <a href="# " class="twitter "><i class="fab fa-twitter "></i></a>
+                    </div>
+                </div>
+        </div>
+
+
+
+    </section>
+
+</body>
+
+</html>
