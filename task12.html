@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intern Testimonials</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .testimonials-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #666;
+        }
+        
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        .testimonial-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        
+        .name {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .role {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 12px;
+        }
+        
+        .text {
+            font-size: 0.95rem;
+            color: #444;
+            margin-bottom: 10px;
+        }
+        
+        .stars {
+            color: #f5b301;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #4a90e2;
+            color: #fff;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        #scrollTopBtn:hover {
+            background-color: #357ABD;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>What Our Interns Say</h1>
+    <p class="subtitle">Real feedback from past interns</p>
+
+    <div class="testimonials-container">
+        <div class="testimonial-card fade-in">
+            <img src="" alt="intern" class="profile-img">
+            <div class="name">Arslan Sheikh</div>
+            <div class="role">Web Development Intern</div>
+            <div class="text">This internship boosted my confidence and gave me real-world coding skills. Highly recommend!</div>
+            <div class="stars">★★★★★</div>
+        </div>
+
+        <div class="testimonial-card fade-in">
+            <img src="" alt="intern" class="profile-img">
+            <div class="name">Usman</div>
+            <div class="role">UI/UX Design Intern</div>
+            <div class="text">The mentorship and learning environment were top-notch. I learned so much!</div>
+            <div class="stars">★★★★☆</div>
+        </div>
+
+        <div class="testimonial-card fade-in">
+            <img src="" alt="intern" class="profile-img">
+            <div class="name">Sana Ahmed</div>
+            <div class="role">Digital Marketing Intern</div>
+            <div class="text">An amazing opportunity that gave me real project exposure. Loved every part of it.</div>
+            <div class="stars">★★★★★</div>
+        </div>
+
+        <div class="testimonial-card fade-in">
+            <img src="" alt="intern" class="profile-img">
+            <div class="name">Ali Zafar</div>
+            <div class="role">Backend Developer Intern</div>
+            <div class="text">A perfect balance of challenge and support. I gained practical experience every day.</div>
+            <div class="stars">★★★★☆</div>
+        </div>
+    </div>
+
+    <button id="scrollTopBtn">↑</button>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+
+        const scrollBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+            scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+</body>
+
+</html>
