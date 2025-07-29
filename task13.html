@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frequently Asked Questions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f9fafb;
+            color: #333;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1rem;
+            color: #555;
+        }
+        
+        .faq-item {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 1rem;
+            font-size: 1rem;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+        
+        .question:hover,
+        .question:focus {
+            background: #f1f5f9;
+            outline: none;
+        }
+        
+        .icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            padding: 0 1rem;
+        }
+        
+        .answer p {
+            padding: 1rem 0;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+            header h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Frequently Asked Questions</h1>
+            <p>Answers to common questions about our internship</p>
+        </header>
+
+        <div class="faq">
+            <!-- FAQ Item -->
+            <div class="faq-item">
+                <button class="question" aria-expanded="false">
+          What is the duration of the internship?
+          <span class="icon">+</span>
+        </button>
+                <div class="answer">
+                    <p>The internship lasts for 8 weeks, with flexible timings.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="question" aria-expanded="false">
+          Is this a paid internship?
+          <span class="icon">+</span>
+        </button>
+                <div class="answer">
+                    <p>No, it's an unpaid internship designed to help you gain real project experience and a certificate.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="question" aria-expanded="false">
+          What skills do I need to apply?
+          <span class="icon">+</span>
+        </button>
+                <div class="answer">
+                    <p>Basic knowledge of HTML, CSS, and JavaScript is preferred but not mandatory.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="question" aria-expanded="false">
+          Will I receive a certificate?
+          <span class="icon">+</span>
+        </button>
+                <div class="answer">
+                    <p>Yes, a certificate will be awarded upon successful completion of the internship.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="question" aria-expanded="false">
+          How do I apply for the internship?
+          <span class="icon">+</span>
+        </button>
+                <div class="answer">
+                    <p>You can apply through our official application form linked on the homepage.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="question" aria-expanded="false">
+          Is the internship remote or in-person?
+          <span class="icon">+</span>
+        </button>
+                <div class="answer">
+                    <p>Our internship is 100% remote, allowing you to work from anywhere.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const questions = document.querySelectorAll('.question');
+
+        questions.forEach((question) => {
+            question.addEventListener('click', () => {
+                const currentlyExpanded = document.querySelector('.question[aria-expanded="true"]');
+
+                if (currentlyExpanded && currentlyExpanded !== question) {
+                    currentlyExpanded.setAttribute('aria-expanded', 'false');
+                    currentlyExpanded.querySelector('.icon').textContent = '+';
+                    currentlyExpanded.nextElementSibling.style.maxHeight = null;
+                }
+
+                const isExpanded = question.getAttribute('aria-expanded') === 'true';
+
+                question.setAttribute('aria-expanded', !isExpanded);
+                question.querySelector('.icon').textContent = isExpanded ? '+' : '–';
+                const answer = question.nextElementSibling;
+
+                if (!isExpanded) {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                } else {
+                    answer.style.maxHeight = null;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
