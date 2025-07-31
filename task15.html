@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Internship Timeline</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f4f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+        }
+        
+        header p {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: #007bff;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 1.5rem 2rem;
+            position: relative;
+            background: #fff;
+            border-radius: 8px;
+            width: 100%;
+            margin: 2rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        
+        .timeline-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background: #007bff;
+            border: 4px solid #fff;
+            top: 20px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-content {
+            padding: 0.5rem;
+        }
+        
+        .timeline-content h3 {
+            margin-bottom: 0.3rem;
+            color: #007bff;
+        }
+        
+        .timeline-content small {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #999;
+        }
+        
+        @media (min-width: 768px) {
+            .timeline-item {
+                width: 50%;
+            }
+            .timeline-item.left {
+                left: 0;
+            }
+            .timeline-item.right {
+                left: 50%;
+            }
+            .timeline-item.left::before {
+                right: -10px;
+            }
+            .timeline-item.right::before {
+                left: -10px;
+            }
+            .timeline::after {
+                left: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Internship Timeline</h1>
+        <p>Track your progress step-by-step</p>
+    </header>
+
+    <section class="timeline">
+
+        <div class="timeline-item left active">
+            <div class="timeline-content">
+                <h3>Week 1: Orientation & Tools Setup</h3>
+                <small>July 1, 2025</small>
+                <p>Introduced to tools, teammates, and project guidelines.</p>
+            </div>
+        </div>
+
+
+        <div class="timeline-item right">
+            <div class="timeline-content">
+                <h3>Week 2: First Task Assigned</h3>
+                <small>July 8, 2025</small>
+                <p>Started first hands-on assignment with support from mentors.</p>
+            </div>
+        </div>
+
+
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <h3>Week 3: Review & Feedback</h3>
+                <small>July 15, 2025</small>
+                <p>Received code review and feedback for improvements.</p>
+            </div>
+        </div>
+
+
+        <div class="timeline-item right">
+            <div class="timeline-content">
+                <h3>Week 4: Group Collaboration</h3>
+                <small>July 22, 2025</small>
+                <p>Worked on team-based tasks and learned project workflows.</p>
+            </div>
+        </div>
+
+
+        <div class="timeline-item left">
+            <div class="timeline-content">
+                <h3>Week 6: Final Project Presentation</h3>
+                <small>August 5, 2025</small>
+                <p>Delivered the final project with a presentation to mentors.</p>
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="timeline-content">
+                <h3>Week 7: Certificate & Completion</h3>
+                <small>August 12, 2025</small>
+                <p>Successfully completed the internship and received a certificate.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const items = document.querySelectorAll('.timeline-item');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        items.forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+</body>
+
+</html>

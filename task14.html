@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meet Our Team</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .team-header {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .team-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-header p {
+            color: #666;
+        }
+        
+        .team-container {
+            display: grid;
+            gap: 2rem;
+            padding: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+        
+        .team-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .team-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .team-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+        
+        .team-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .role {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .bio {
+            font-style: italic;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .social-icons a {
+            color: #555;
+            margin: 0 0.5rem;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: #0077b5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="team-header">
+        <h1>Meet Our Team</h1>
+        <p>The passionate individuals behind our success</p>
+    </header>
+
+    <section class="team-container">
+        <div class="team-card">
+            <img src="https://via.placeholder.com/150" alt="Team Member">
+            <h3>Arslan Sheikh</h3>
+            <p class="role">Web Developer</p>
+            <p class="bio">"Turning ideas into interactive web experiences."</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+
+        <div class="team-card">
+            <img src="https://via.placeholder.com/150" alt="Team Member">
+            <h3>Aness Ali</h3>
+            <p class="role">Front-end Developer</p>
+            <p class="bio">"Pixel-perfect UI is my passion."</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+
+        <div class="team-card">
+            <img src="https://via.placeholder.com/150" alt="Team Member">
+            <h3>Hassan</h3>
+            <p class="role">Graphic Designer</p>
+            <p class="bio">"Designing visuals that speak louder than words."</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+
+        <div class="team-card">
+            <img src="https://via.placeholder.com/150" alt="Team Member">
+            <h3>Sara Noor</h3>
+            <p class="role">UI/UX Designer</p>
+            <p class="bio">"Empathy-led design for real users."</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const cards = document.querySelectorAll(".team-card");
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+
+</body>
+
+</html>
