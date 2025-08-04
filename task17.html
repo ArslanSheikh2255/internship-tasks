@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Internship Testimonials</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        header {
+            background-color: #4f46e5;
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem 3rem;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .testimonials {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        .grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s ease-out;
+        }
+        
+        .card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+        
+        .card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .card .role {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .card .stars {
+            color: #facc15;
+            margin-top: 1rem;
+        }
+        
+        #scrollTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            font-size: 1.5rem;
+            background: #4f46e5;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 0.6rem 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        #scrollTopBtn:hover {
+            transform: scale(1.1);
+        }
+        
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>What Our Interns Say</h1>
+        <p>Real feedback from real interns</p>
+    </header>
+
+    <section class="testimonials">
+        <div class="grid">
+            <div class="card">
+                <img src="D:\iphone 12\New\2024_04_30_21_49_IMG_1183.JPG" alt="Intern Photo">
+                <h3>Arslan Sheikh</h3>
+                <p class="role">Web Developer Intern</p>
+                <p>"This internship helped me understand real-world development and sharpen my front-end skills."</p>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="card">
+                <img src="C:\Users\HP\OneDrive\Desktop\sana.jpg" alt="Intern Photo">
+                <h3>Sana Tariq</h3>
+                <p class="role">UI/UX Design Intern</p>
+                <p>"The design tasks were engaging and I learned to work in a real team environment."</p>
+                <div class="stars">⭐⭐⭐⭐</div>
+            </div>
+            <div class="card">
+                <img src="C:\Users\HP\OneDrive\Desktop\ahmed.jpg" alt="Intern Photo">
+                <h3>Ahmed Raza</h3>
+                <p class="role">Mobile App Intern</p>
+                <p>"Loved the flexible timings and mentorship. A great place to grow as a developer."</p>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="card">
+                <img src="C:\Users\HP\OneDrive\Desktop\hira.jpg" alt="Intern Photo">
+                <h3>Hira Shah</h3>
+                <p class="role">Content Writer Intern</p>
+                <p>"I improved my writing and learned SEO content strategies during this internship."</p>
+                <div class="stars">⭐⭐⭐⭐</div>
+            </div>
+            <div class="card">
+                <img src="C:\Users\HP\OneDrive\Desktop\bilal.jpg" alt="Intern Photo">
+                <h3>Bilal Mehmood</h3>
+                <p class="role">Backend Developer Intern</p>
+                <p>"Working with databases and APIs was challenging, but so rewarding. Highly recommend!"</p>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="card">
+                <img src="C:\Users\HP\OneDrive\Desktop\mira.jpg" alt="Intern Photo">
+                <h3>Maria Ahmed</h3>
+                <p class="role">Marketing Intern</p>
+                <p>"I gained hands-on experience in social media and analytics—great for my portfolio!"</p>
+                <div class="stars">⭐⭐⭐⭐</div>
+            </div>
+        </div>
+    </section>
+
+    <button id="scrollTopBtn" title="Go to top">↑</button>
+
+    <script>
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+        window.onscroll = () => {
+            scrollTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+
+
+            document.querySelectorAll('.card').forEach(card => {
+                const rect = card.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 50) {
+                    card.classList.add('visible');
+                }
+            });
+        };
+
+        scrollTopBtn.onclick = () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        };
+    </script>
+
+</body>
+
+</html>
