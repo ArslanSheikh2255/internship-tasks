@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Portfolio Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        header {
+            background: #333;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        nav ul li a.active,
+        nav ul li a:hover {
+            color: #00bcd4;
+        }
+        
+        section {
+            padding: 80px 20px;
+        }
+        
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 100px;
+            flex-wrap: wrap;
+        }
+        
+        .hero img {
+            width: 200px;
+            border-radius: 10px;
+        }
+        
+        .btn {
+            background: #00bcd4;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        
+        .btn:hover {
+            background: #0097a7;
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .about-content img {
+            width: 200px;
+            border-radius: 10px;
+        }
+        
+        .skills .bar {
+            display: block;
+            background: #ccc;
+            height: 8px;
+            border-radius: 4px;
+            margin: 5px 0;
+        }
+        
+        .skills .bar span {
+            display: block;
+            background: #00bcd4;
+            height: 8px;
+            border-radius: 4px;
+        }
+        
+        .project-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .card {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        
+        .card:hover {
+            transform: scale(1.05);
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 400px;
+        }
+        
+        input,
+        textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #00bcd4;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            display: none;
+            cursor: pointer;
+        }
+        
+        @media(max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <nav>
+            <div class="logo">Arslan Sheikh</div>
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm Arslan Sheikh – Web Developer Intern</h1>
+            <p>Passionate about building responsive and interactive websites using HTML, CSS, and JavaScript.</p>
+            <a href="#" class="btn">Download CV</a>
+        </div>
+        <div class="hero-image">
+            <img src="D:\iphone 12\Instagram\2024_06_19_00_04_IMG_1830.JPG" alt="Hero Image">
+        </div>
+    </section>
+
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <img src="D:\iphone 12\Instagram\2024_06_19_00_04_IMG_1830.JPG" alt="Profile Image">
+            <div>
+                <p>I am a passionate web developer focusing on creating modern, responsive, and user-friendly websites.</p>
+                <p>Skilled in HTML, CSS, and JavaScript, with a strong desire to learn and grow as a developer.</p>
+                <h3>Skills</h3>
+                <ul class="skills">
+                    <li>HTML <span class="bar"><span style="width:90%"></span></span>
+                    </li>
+                    <li>CSS <span class="bar"><span style="width:80%"></span></span>
+                    </li>
+                    <li>JavaScript <span class="bar"><span style="width:70%"></span></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-cards">
+            <div class="card">
+                <img src="https://via.placeholder.com/250" alt="Project 1">
+                <h3>Project One</h3>
+                <p>A brief description of the project.</p>
+                <a href="#" class="btn">View</a>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/250" alt="Project 2">
+                <h3>Project Two</h3>
+                <p>A brief description of the project.</p>
+                <a href="#" class="btn">View</a>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/250" alt="Project 3">
+                <h3>Project Three</h3>
+                <p>A brief description of the project.</p>
+                <a href="#" class="btn">View</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact">
+        <h2>Get in Touch</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name">
+            <input type="email" id="email" placeholder="Your Email">
+            <textarea id="message" placeholder="Your Message"></textarea>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+        <p id="formMessage"></p>
+    </section>
+
+    <button id="scrollTopBtn">&#8679;</button>
+
+    <script>
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                scrollTopBtn.style.display = 'block';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const formMessage = document.getElementById('formMessage');
+
+            if (name === '' || email === '' || message === '') {
+                formMessage.textContent = 'Please fill out all fields.';
+                formMessage.style.color = 'red';
+            } else if (!/\S+@\S+\.\S+/.test(email)) {
+                formMessage.textContent = 'Please enter a valid email.';
+                formMessage.style.color = 'red';
+            } else {
+                formMessage.textContent = 'Message sent successfully!';
+                formMessage.style.color = 'green';
+                this.reset();
+            }
+        });
+    </script>
+
+</body>
+
+</html>
