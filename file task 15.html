@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #f9f9f9;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        
+        header {
+            background: #00bcd4;
+            color: #fff;
+            padding: 50px 20px 30px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 18px;
+            color: #e0f7fa;
+        }
+        
+        .services-section {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .service-card img {
+            width: 60px;
+            margin-bottom: 15px;
+        }
+        
+        .service-card h3 {
+            margin: 10px 0;
+            color: #00bcd4;
+            font-size: 20px;
+        }
+        
+        .service-card p {
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .service-card .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 18px;
+            background: #00bcd4;
+            color: #fff;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+        
+        .service-card .btn:hover {
+            background: #0097a7;
+        }
+        
+        .service-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+            .service-card {
+                padding: 25px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Our Services</h1>
+        <p>Explore how we help businesses grow</p>
+    </header>
+
+    <section class="services-section">
+        <div class="services-grid">
+
+            <div class="service-card fade-in">
+                <img src="https://img.icons8.com/color/96/web-design.png" alt="Web Design">
+                <h3>Web Design</h3>
+                <p>Modern, responsive and creative UI designs tailored to your brand.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+
+            <div class="service-card fade-in">
+                <img src="https://img.icons8.com/color/96/seo.png" alt="SEO Optimization">
+                <h3>SEO Optimization</h3>
+                <p>Improve your search rankings and organic traffic with expert SEO.</p>
+                <a href="#" class="btn">Get Started</a>
+            </div>
+
+            <div class="service-card fade-in">
+                <img src="https://img.icons8.com/color/96/cloud.png" alt="Hosting Services">
+                <h3>Hosting Services</h3>
+                <p>Fast and secure hosting solutions for websites and web apps.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+
+            <div class="service-card fade-in">
+                <img src="https://img.icons8.com/color/96/javascript.png" alt="Web Development">
+                <h3>Web Development</h3>
+                <p>Custom websites and dynamic web apps using HTML, CSS, and JS.</p>
+                <a href="#" class="btn">Get Started</a>
+            </div>
+
+            <div class="service-card fade-in">
+                <img src="https://img.icons8.com/color/96/online-store.png" alt="E-Commerce">
+                <h3>E-Commerce Solutions</h3>
+                <p>Sell your products online with secure and scalable e-commerce setups.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+
+            <div class="service-card fade-in">
+                <img src="https://img.icons8.com/color/96/customer-support.png" alt="Maintenance">
+                <h3>Maintenance & Support</h3>
+                <p>Ongoing site updates, backups, and tech support whenever needed.</p>
+                <a href="#" class="btn">Get Started</a>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.service-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials Slider</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: #f5f7fa;
+            color: #333;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        p.subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .slider {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .testimonial {
+            flex: 0 0 100%;
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 0 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .testimonial span {
+            font-size: 0.9rem;
+            color: #888;
+        }
+        
+        .testimonial p {
+            font-size: 0.95rem;
+            margin: 15px 0;
+            color: #555;
+        }
+        
+        .stars {
+            color: #ffb400;
+        }
+        
+        .btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .btn:hover {
+            background: #ff6b6b;
+        }
+        
+        .prev {
+            left: 10px;
+        }
+        
+        .next {
+            right: 10px;
+        }
+        
+        @media (min-width: 768px) {
+            .testimonial {
+                flex: 0 0 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>What Our Interns Say</h1>
+        <p class="subtitle">Hear from those who’ve experienced our programs</p>
+
+        <div class="slider">
+            <button class="btn prev">&#10094;</button>
+            <div class="slider-track">
+                <div class="testimonial">
+                    <img src="https://via.placeholder.com/80" alt="">
+                    <h3>Arslan Sheikh</h3>
+                    <span>Web Developer Intern</span>
+                    <p>This internship boosted my skills and confidence. The mentors were amazing!</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="testimonial">
+                    <img src="https://via.placeholder.com/80" alt="">
+                    <h3>Ali Raza</h3>
+                    <span>Frontend Developer Intern</span>
+                    <p>I learned real-world projects and improved my portfolio. Highly recommended!</p>
+                    <div class="stars">★★★★☆</div>
+                </div>
+                <div class="testimonial">
+                    <img src="https://via.placeholder.com/80" alt="">
+                    <h3>Sara Ahmed</h3>
+                    <span>UI/UX Designer Intern</span>
+                    <p>The team was supportive, and I got to work on creative design tasks.</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="testimonial">
+                    <img src="https://via.placeholder.com/80" alt="">
+                    <h3>Hassan Ali</h3>
+                    <span>Full Stack Intern</span>
+                    <p>I gained hands-on experience in both frontend and backend technologies.</p>
+                    <div class="stars">★★★★☆</div>
+                </div>
+            </div>
+            <button class="btn next">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const track = document.querySelector('.slider-track');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        let index = 0;
+        let slideWidth = document.querySelector('.testimonial').clientWidth;
+
+        function updateSlider() {
+            track.style.transform = `translateX(-${index * slideWidth}px)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (index < document.querySelectorAll('.testimonial').length - 1) {
+                index++;
+                updateSlider();
+            } else {
+                index = 0;
+                updateSlider();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (index > 0) {
+                index--;
+                updateSlider();
+            } else {
+                index = document.querySelectorAll('.testimonial').length - 1;
+                updateSlider();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            slideWidth = document.querySelector('.testimonial').clientWidth;
+            updateSlider();
+        });
+
+
+        setInterval(() => {
+            nextBtn.click();
+        }, 4000);
+    </script>
+
+</body>
+
+</html>

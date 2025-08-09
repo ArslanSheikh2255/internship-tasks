@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Showcase</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            text-align: center;
+            padding: 50px 10%;
+            background: linear-gradient(to right, #1e3a8a, #2563eb);
+            color: white;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+        }
+        
+        .gallery {
+            padding: 50px 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .card img:hover {
+            transform: scale(1.05);
+        }
+        
+        .card-content {
+            padding: 15px;
+        }
+        
+        .card-content h3 {
+            margin-bottom: 8px;
+            color: #1e3a8a;
+        }
+        
+        .card-content p {
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+        
+        .card-content button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .card-content button:hover {
+            background: #1e40af;
+        }
+        
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+        
+        .lightbox:active {
+            display: none;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+        }
+        
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s;
+        }
+        
+        #scrollTopBtn:hover {
+            background: #1e40af;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Our Work</h1>
+        <p>A look at what we’ve created</p>
+    </header>
+
+    <section class="gallery">
+        <div class="card">
+            <img src="https://via.placeholder.com/400x250" alt="Project 1">
+            <div class="card-content">
+                <h3>Project One</h3>
+                <p>Creative web design project with responsive features.</p>
+                <button>View Project</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/400x250" alt="Project 2">
+            <div class="card-content">
+                <h3>Project Two</h3>
+                <p>Innovative mobile app development for modern needs.</p>
+                <button>View Project</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/400x250" alt="Project 3">
+            <div class="card-content">
+                <h3>Project Three</h3>
+                <p>Data analysis dashboard with interactive charts.</p>
+                <button>View Project</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/400x250" alt="Project 4">
+            <div class="card-content">
+                <h3>Project Four</h3>
+                <p>Branding and graphic design for startups.</p>
+                <button>View Project</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/400x250" alt="Project 5">
+            <div class="card-content">
+                <h3>Project Five</h3>
+                <p>E-commerce platform with secure payment gateway.</p>
+                <button>View Project</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/400x250" alt="Project 6">
+            <div class="card-content">
+                <h3>Project Six</h3>
+                <p>SEO-optimized blog website with custom CMS.</p>
+                <button>View Project</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="lightbox" id="lightbox">
+        <span class="close-btn" id="closeBtn">&times;</span>
+        <img id="lightboxImg" src="" alt="Enlarged Project">
+    </div>
+
+    <button id="scrollTopBtn">&#8679;</button>
+
+    <script>
+        const images = document.querySelectorAll('.gallery img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const closeBtn = document.getElementById('closeBtn');
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.style.display = 'flex';
+                lightboxImg.src = img.src;
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) {
+                lightbox.style.display = 'none';
+            }
+        });
+
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+            scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+</body>
+
+</html>

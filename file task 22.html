@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            background: #f4f4f4;
+            color: #333;
+        }
+        
+        header {
+            background: #222;
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        header h1 {
+            font-size: 1.5rem;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .cart-counter {
+            background: crimson;
+            border-radius: 50%;
+            padding: 2px 8px;
+            font-size: 0.8rem;
+            position: relative;
+            top: -10px;
+            left: -8px;
+        }
+        
+        .hero {
+            background: url('https://via.placeholder.com/1600x500') center/cover no-repeat;
+            text-align: center;
+            color: #fff;
+            padding: 100px 20px;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+        }
+        
+        .hero p {
+            margin: 10px 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #ff6f61;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #e65c50;
+        }
+        
+        section {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        h2.section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+        
+        .categories,
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .card button {
+            margin-top: 10px;
+            padding: 8px 15px;
+            border: none;
+            background: #222;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .card button:hover {
+            background: #444;
+        }
+        
+        .contact-form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        
+        footer {
+            background: #222;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>TechMart</h1>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#products">Cart <span id="cart-count" class="cart-counter">0</span></a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="hero">
+        <h2>Smart Shopping Starts Here</h2>
+        <p>Browse products across categories with ease.</p>
+        <a href="#categories" class="btn">Browse Now</a>
+    </section>
+
+    <section id="categories">
+        <h2 class="section-title">Shop by Category</h2>
+        <div class="categories">
+            <div class="card">
+                <img src="https://via.placeholder.com/250" alt="Laptops">
+                <h3>Laptops</h3>
+                <button>Explore</button>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/250" alt="Smartphones">
+                <h3>Smartphones</h3>
+                <button>Explore</button>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/250" alt="Accessories">
+                <h3>Accessories</h3>
+                <button>Explore</button>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/250" alt="Smart Home">
+                <h3>Smart Home</h3>
+                <button>Explore</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="products">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="products">
+            <div class="card">
+                <img src="https://via.placeholder.com/250" alt="Product">
+                <h4>Product 1</h4>
+                <p>$499</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/250" alt="Product">
+                <h4>Product 2</h4>
+                <p>$599</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/250" alt="Product">
+                <h4>Product 3</h4>
+                <p>$199</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/250" alt="Product">
+                <h4>Product 4</h4>
+                <p>$299</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/250" alt="Product">
+                <h4>Product 5</h4>
+                <p>$399</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/250" alt="Product">
+                <h4>Product 6</h4>
+                <p>$699</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+            <button id="submit-btn" class="btn">Submit</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>Follow us:
+            <a href="#">Facebook</a> |
+            <a href="#">Twitter</a> |
+            <a href="#">Instagram</a>
+        </p>
+        <p>Quick Links: <a href="#hero">Home</a> | <a href="#categories">Categories</a> | <a href="#contact">Contact</a></p>
+        <p>&copy; 2025 TechMart. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let cartCount = 0;
+        const cartCounter = document.getElementById('cart-count');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                cartCount++;
+                cartCounter.textContent = cartCount;
+            });
+        });
+
+        document.getElementById('submit-btn').addEventListener('click', () => {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            if (!name || !email || !message) {
+                alert('Please fill all fields.');
+            } else if (!email.match(emailPattern)) {
+                alert('Please enter a valid email address.');
+            } else {
+                alert('Message sent successfully!');
+                document.getElementById('name').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('message').value = '';
+            }
+        });
+    </script>
+
+</body>
+
+</html>
